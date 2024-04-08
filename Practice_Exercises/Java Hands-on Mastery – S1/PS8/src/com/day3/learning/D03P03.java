@@ -61,6 +61,7 @@ public class D03P03 {
         bookSet.add(new Book(1004, "Read c++", 295.0, "19/11/1984", "Henry Harvin"));
         bookSet.add(new Book(1005, ".Net Platform", 3497.0, "6/3/1984", "Mark J.Price"));
 
+
         // Print all the book details
         for (Book book : bookSet) {
             System.out.println(book.bookId + "  " + book.title + "  " + book.price + "  " + book.publicationDate + "  " + book.author);

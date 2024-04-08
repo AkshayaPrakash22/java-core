@@ -20,6 +20,7 @@ public class D03P04 {
 		hs.add(product2);
 		hs.add(product3);
 		hs.add(product4);
+
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter product id to remove");
 		String removeProductId = s.nextLine();

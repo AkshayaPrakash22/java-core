@@ -12,6 +12,7 @@ public class D02P03 {
 			return;
 		}
 
+
 		// Include the character at the current index in the subsequence
 		printSubsequences(str, index + 1, current + str.charAt(index));
 

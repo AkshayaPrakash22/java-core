@@ -9,12 +9,14 @@ class NegativeAmountException extends Exception {
 	}
 }
 
+
 // Custom exception for low balance
 class LowBalanceException extends Exception {
 	public LowBalanceException(String message) {
 		super(message);
 	}
 }
+
 
 // BankAccount class
 public class BankAccount {
