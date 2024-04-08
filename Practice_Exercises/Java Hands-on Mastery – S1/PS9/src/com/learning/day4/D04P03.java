@@ -45,6 +45,7 @@ public class D04P03 {
 				ops.pop();
 			}
 
+
 			// Current token is an operator.
 			else if (a[i] == '+' || a[i] == '-' || a[i] == '*' || a[i] == '/') {
 				while (!ops.empty() && hasPrecedence(a[i], ops.peek()))

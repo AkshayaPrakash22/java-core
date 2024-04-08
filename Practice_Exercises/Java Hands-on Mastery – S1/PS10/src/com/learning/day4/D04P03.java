@@ -16,7 +16,8 @@ public class D04P03 {
 		for (int i = 0; i < n; i++) {
 			a[i] = scanner.nextInt();
 		}
-        System.out.println("Enter search element using linear search");
+
+                System.out.println("Enter search element using linear search");
 		int search = scanner.nextInt();
 		int count = 0;
 		for (int i = 0; i < n; i++) {
