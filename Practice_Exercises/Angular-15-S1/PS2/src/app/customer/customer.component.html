@@ -1,0 +1,72 @@
+<h1 style="color: black; display: inline-block;">
+    <img src="https://p7.hiclipart.com/preview/201/51/681/computer-icons-customer-service-user-others.jpg" alt="Icon" style="margin-right: 10px; width: 32px; height: 32px;"> <!-- Image -->
+    Customers
+</h1>
+<br><br>
+<nav style="display: inline-block; margin-left: 20px;">
+    <ul style="list-style-type: none; margin: 0; padding: 0;">
+      <li style="display: inline-block; margin-right: 30px;">
+            <i class="fas fa-th-large"></i> Card View
+    </li>
+    <li style="display: inline-block; margin-right: 30px;" [class.active]="!isListViewActive" (click)="toggleListView()">
+          <i class="fas fa-list-ul"></i> List View
+  </li>
+        <li style="display: inline-block; margin-right: 30px;">
+          <i class="fas fa-map-marked-alt"></i> Map View
+        </li>
+        <li style="display: inline-block; margin-right: 30px;">
+          <i class="fas fa-user-plus"></i> New Customer</li>
+        <li style="display: inline-block;">
+            <div style="position: relative;">
+                <input type="text" placeholder="Search" style="padding: 5px; padding-left: 30px;">
+                <i class="fas fa-search" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);"></i>
+            </div>
+        </li>
+    </ul>
+</nav>
+<br><br>
+<div *ngIf="!isListViewActive">
+<table class="customer-table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Order Total</th>
+        <th>Order Details</th>
+      </tr>
+    </thead>
+    <tbody *appPagination="pageIndex; firstIndex: (pageIndex * pageSize); lastIndex: getLastIndex()">
+      <ng-container *ngFor="let customer of customers | slice:(pageIndex * pageSize):getLastIndex()"> 
+        <tr> 
+          <td>{{ customer.First_Name }}</td>
+          <td>{{ customer.Last_Name }}</td>
+          <td>{{ customer.Address }}</td>
+          <td>{{ customer.City }}</td>
+          <td>{{ customer.State }}</td>
+          <td>{{ customer.Order_Total }}</td>
+          <td><a href="javascript:void(0)" (click)="showOrderDetails(customer)">View Orders</a></td>
+        </tr>
+      </ng-container>
+    </tbody>
+    </table>
+  </div>
+  <div class="pagination-container">
+    <button *ngIf="pageIndex > 0" (click)="goToPreviousPage()">Previous</button>
+    <ng-container *ngFor="let page of getPageNumbers()">
+      <button (click)="goToPage(page)" [class.active]="pageIndex === page">{{ page + 1 }}</button>
+    </ng-container>
+    <button *ngIf="(pageIndex + 1) * pageSize < customers.length" (click)="goToNextPage()">Next</button>
+  </div>
+<br><br>
+  <div *ngIf="selectedCustomer" class="order-details">
+    <h2>Orders for {{ selectedCustomer.First_Name }} {{ selectedCustomer.Last_Name }}</h2>
+    <ul>
+        <li *ngFor="let order of selectedCustomer.orders">
+            Product: {{ order.product }}, Price: {{ order.Price }}
+        </li>
+    </ul>
+    <p>Total Order Amount: {{ getTotalOrderAmount(selectedCustomer) }}</p>
+</div>

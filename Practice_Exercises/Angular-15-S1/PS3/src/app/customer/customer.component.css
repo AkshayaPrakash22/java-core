@@ -1,0 +1,99 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  width: calc(20% - 10px); 
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  background-color: blue;
+  color: white;
+  position: relative; 
+}
+
+.card-header .edit-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.card-body {
+  padding: 15px;
+  position: relative;
+}
+.customer-icon {
+  width: 80px; 
+  height: auto; 
+}
+
+.icon-left {
+  float: left;
+  margin-right: 10px; 
+}
+
+.content-right {
+  overflow: hidden; 
+}
+
+.card-body p {
+  margin: 5px 0;
+}
+
+.card-body a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  text-decoration: underline;
+}
+
+  .order-details {
+    border: 2px solid black;
+    padding: 10px;
+    width: 30%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+}
+
+.order-details h4 {
+    margin-top: 0;
+}
+
+.order-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-details li {
+    margin-bottom: 5px;
+}
+
+.active {
+  font-weight: bold;
+  color:blue;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+

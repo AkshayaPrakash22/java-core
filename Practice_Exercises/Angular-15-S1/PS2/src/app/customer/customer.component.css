@@ -1,0 +1,64 @@
+.customer-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .customer-table th, .customer-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .customer-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .customer-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .customer-table a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .customer-table a:hover {
+    color: #0044cc;
+  }
+
+  .order-details {
+    border: 2px solid black;
+    padding: 10px;
+    width: 30%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+}
+
+.order-details h4 {
+    margin-top: 0;
+}
+
+.order-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-details li {
+    margin-bottom: 5px;
+}
+
+.active {
+  font-weight: bold;
+  color:blue;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}
+
+.pagination-container button {
+  margin: 0 5px; 
+}

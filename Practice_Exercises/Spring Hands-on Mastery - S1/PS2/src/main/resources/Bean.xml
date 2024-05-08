@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define beans for Battery and Disc -->
+    <bean id="battery" class="com.learning.day5.Battery">
+        <constructor-arg value="1001"/>
+        <constructor-arg value="AAA Rechargeable Battery"/>
+        <constructor-arg value="5.99"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <bean id="disc" class="com.learning.day5.Disc">
+        <constructor-arg value="1002"/>
+        <constructor-arg value="DVD-R Disc"/>
+        <constructor-arg value="10.99"/>
+        <constructor-arg value="4"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,28 @@
+
+<div class="container">
+    <h1 style="color: black; display: inline-block;">
+        <img src="https://t4.ftcdn.net/jpg/02/23/30/05/360_F_223300535_ZjF66Uvz1Bm4yUv35GKUmRxkTC5kNBln.jpg" alt="Login Icon" style="margin-right: 10px; width: 32px; height: 32px;"> <!-- Image -->
+        Login
+    </h1> 
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" formControlName="email" required>
+        <div style="color:red;font-size: 17px;" *ngIf="formControls.email.invalid && (formControls.email.dirty || formControls.email.touched)">
+            <div *ngIf="formControls.email.errors && formControls.email.errors['required']">Email is required.</div>
+            <div *ngIf="formControls.email.errors && formControls.email.errors['email']">Invalid email format.</div>
+        </div>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" formControlName="password" required>
+        <div style="color:red;font-size: 17px;" *ngIf="formControls.password.invalid && (formControls.password.dirty || formControls.password.touched)">
+            <div *ngIf="formControls.password.errors && formControls.password.errors['required']">Password is required.</div>
+            <div *ngIf="formControls.password.errors && formControls.password.errors['minlength']">Password must be at least 6 characters long.</div>
+            <div *ngIf="formControls.password.errors && formControls.password.errors['maxlength']">Password must not exceed 10 characters.</div>
+            <div *ngIf="formControls.password.errors && formControls.password.errors['passwordRequirements']">
+                Password must contain at least one letter, one number, and one special character.
+              </div>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>

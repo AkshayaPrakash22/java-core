@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Define ShoppingCart bean -->
+	<bean id="shoppingCart" class="com.learning.day5.ShoppingCart"
+		scope="prototype" />
+
+
+	<!-- Define beans for Battery and Disc -->
+	<bean id="battery" class="com.learning.day5.Battery">
+		<property name="product_id" value="1001" />
+		<property name="product_name" value="Recharable Battery" />
+		<property name="rechargeable" value="true" />
+		<property name="price" value="10.0" />
+
+	</bean>
+
+	<bean id="disc" class="com.learning.day5.Disc">
+		<property name="product_id" value="1002" />
+		<property name="product_name" value="DVD" />
+		<property name="capacity" value="700" />
+		<property name="price" value="20.0" />
+
+	</bean>
+
+	<!-- Define Cashier bean with init and destroy methods -->
+	<bean id="cashier" class="com.learning.day5.Cashier"
+		init-method="openFile" destroy-method="closeFile">
+		<property name="fileName" value="checkout" />
+		<property name="path"
+			value="C:/Users/admin/OneDrive/Desktop/checkoutDirectory" />
+
+	</bean>
+
+
+
+</beans>

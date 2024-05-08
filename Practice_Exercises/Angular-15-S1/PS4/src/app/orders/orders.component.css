@@ -1,0 +1,30 @@
+.order-list {
+    padding: 20px;
+}
+
+.order-details {
+    margin-top: 10px;
+}
+
+.order-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-details ul li {
+    margin-bottom: 5px;
+}
+
+.order-details ul li span {
+    display: inline-block;
+}
+
+.order-details ul li .price {
+    float: right;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+}
